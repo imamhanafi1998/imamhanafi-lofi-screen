@@ -1,15 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
-// import logo from './logo.svg';
 import './assets/css/App.css';
 
-// import {
-//     BrowserRouter as Router,
-//     Routes,
-//     Route
-// } from "react-router-dom";
-
 import { Box } from '@chakra-ui/react'
-// import MusicPlayer from './components/MusicPlayer';
 import LoFi from './components/LoFi';
 import Header from './components/Header';
 
@@ -17,11 +9,21 @@ function App() {
     const [isFirstLoad, setIsFirstLoad] = useState(true)
     const [isFullScreen, setIsFullScreen] = useState(false)
     const [isSunny, setIsSunny] = useState(true)
+    const [isMorning, setIsMorning] = useState(true)
     const [isSongPlaying, setIsSongPlaying] = useState(false)
     const [loFiTheme, setLoFiTheme] = useState('Chill')
     const [songIndex, setSongIndex] = useState(0)
+
     const [songVolume, setSongVolume] = useState(100)
+
     const [rainVolume, setRainVolume] = useState(0)
+    const [birdVolume, setBirdVolume] = useState(0)
+    const [trafficVolume, setTrafficVolume] = useState(0)
+    const [fanVolume, setFanVolume] = useState(0)
+    const [firePlaceVolume, setFirePlaceVolume] = useState(0)
+    const [peopleVolume, setPeopleVolume] = useState(0)
+    const [riverVolume, setRiverVolume] = useState(0)
+    const [windVolume, setWindVolume] = useState(0)
 
     useEffect(() => {
         if (!isFirstLoad) {
@@ -49,6 +51,13 @@ function App() {
     const audioSleep3Ref = useRef()
 
     const audioRainRef = useRef()
+    const audioBirdRef = useRef()
+    const audioTrafficRef = useRef()
+    const audioFanRef = useRef()
+    const audioFirePlaceRef = useRef()
+    const audioPeopleRef = useRef()
+    const audioRiverRef = useRef()
+    const audioWindRef = useRef()
 
     const pauseAll = () => {
         audioChill1Ref.current.pause()
@@ -108,9 +117,6 @@ function App() {
     }
 
     const changeRainVolumeHandler = vol => {
-        // if (isSunny) {
-        //     vol = 0
-        // }
         vol = 0.01 * vol
         audioRainRef.current.volume = vol
         if (vol === 0) {
@@ -122,10 +128,87 @@ function App() {
         }
     }
 
+    const changeBirdVolumeHandler = vol => {
+        vol = 0.01 * vol
+        audioBirdRef.current.volume = vol
+        if (vol === 0) {
+            audioBirdRef.current.pause()
+        } else {
+            audioBirdRef.current.play()
+        }
+    }
+
+    const changeTrafficVolumeHandler = vol => {
+        vol = 0.01 * vol
+        audioTrafficRef.current.volume = vol
+        if (vol === 0) {
+            audioTrafficRef.current.pause()
+        } else {
+            audioTrafficRef.current.play()
+        }
+    }
+
+    const changeFanVolumeHandler = vol => {
+        vol = 0.01 * vol
+        audioFanRef.current.volume = vol
+        if (vol === 0) {
+            audioFanRef.current.pause()
+        } else {
+            audioFanRef.current.play()
+        }
+    }
+
+    const changeFirePlaceVolumeHandler = vol => {
+        vol = 0.01 * vol
+        audioFirePlaceRef.current.volume = vol
+        if (vol === 0) {
+            audioFirePlaceRef.current.pause()
+        } else {
+            audioFirePlaceRef.current.play()
+        }
+    }
+
+    const changePeopleVolumeHandler = vol => {
+        vol = 0.01 * vol
+        audioPeopleRef.current.volume = vol
+        if (vol === 0) {
+            audioPeopleRef.current.pause()
+        } else {
+            audioPeopleRef.current.play()
+        }
+    }
+
+    const changeRiverVolumeHandler = vol => {
+        vol = 0.01 * vol
+        audioRiverRef.current.volume = vol
+        if (vol === 0) {
+            audioRiverRef.current.pause()
+        } else {
+            audioRiverRef.current.play()
+        }
+    }
+
+    const changeWindVolumeHandler = vol => {
+        vol = 0.01 * vol
+        audioWindRef.current.volume = vol
+        if (vol === 0) {
+            audioWindRef.current.pause()
+        } else {
+            audioWindRef.current.play()
+        }
+    }
+
     useEffect(() => {
         changeSongVolumeHandler(songVolume)
         changeRainVolumeHandler(rainVolume)
-    }, [songVolume, rainVolume])
+        changeBirdVolumeHandler(birdVolume)
+        changeTrafficVolumeHandler(trafficVolume)
+        changeFanVolumeHandler(fanVolume)
+        changeFirePlaceVolumeHandler(firePlaceVolume)
+        changePeopleVolumeHandler(peopleVolume)
+        changeRiverVolumeHandler(riverVolume)
+        changeWindVolumeHandler(windVolume)
+    }, [songVolume, rainVolume, birdVolume, trafficVolume, fanVolume, firePlaceVolume, peopleVolume, riverVolume, windVolume])
 
     const changeSongHandler = () => {
         randomGenerator()
@@ -158,17 +241,41 @@ function App() {
                     setIsFullScreen = {setIsFullScreen}
                     isSunny = {isSunny}
                     setIsSunny = {setIsSunny}
+                    isMorning = {isMorning}
+                    setIsMorning = {setIsMorning}
                     isSongPlaying = {isSongPlaying}
                     playAudio = {playAudio}
                     audioRainRef = {audioRainRef}
                     loFiTheme = {loFiTheme} 
                     setLoFiTheme = {setLoFiTheme}
                     changeSongHandler={changeSongHandler}
-                    // changeSongVolumeHandler={changeSongVolumeHandler}
                     songVolume = {songVolume}
                     setSongVolume = {setSongVolume}
+                    
                     rainVolume = {rainVolume}
                     setRainVolume = {setRainVolume}
+                    birdVolume = {birdVolume}
+                    setBirdVolume = {setBirdVolume}
+                    trafficVolume = {trafficVolume}
+                    setTrafficVolume = {setTrafficVolume}
+                    fanVolume = {fanVolume}
+                    setFanVolume = {setFanVolume}
+                    firePlaceVolume = {firePlaceVolume}
+                    setFirePlaceVolume = {setFirePlaceVolume}
+                    peopleVolume = {peopleVolume}
+                    setPeopleVolume = {setPeopleVolume}
+                    riverVolume = {riverVolume}
+                    setRiverVolume = {setRiverVolume}
+                    windVolume = {windVolume}
+                    setWindVolume = {setWindVolume}
+
+                    // changeBirdVolumeHandler = {changeBirdVolumeHandler}
+                    // changeTrafficVolumeHandler = {changeTrafficVolumeHandler}
+                    // changeFanVolumeHandler = {changeFanVolumeHandler}
+                    // changeFirePlaceVolumeHandler = {changeFirePlaceVolumeHandler}
+                    // changePeopleVolumeHandler = {changePeopleVolumeHandler}
+                    // changeRiverVolumeHandler = {changeRiverVolumeHandler}
+                    // changeWindVolumeHandler = {changeWindVolumeHandler}
                 />
                 <LoFi 
                     audioChill1Ref = {audioChill1Ref}
@@ -184,10 +291,18 @@ function App() {
                     audioSleep3Ref={audioSleep3Ref}
 
                     audioRainRef = {audioRainRef}
+                    audioBirdRef = {audioBirdRef}
+                    audioTrafficRef = {audioTrafficRef}
+                    audioFanRef = {audioFanRef}
+                    audioFirePlaceRef = {audioFirePlaceRef}
+                    audioPeopleRef = {audioPeopleRef}
+                    audioRiverRef = {audioRiverRef}
+                    audioWindRef = {audioWindRef}
+
                     isSunny = {isSunny}
+                    isMorning = {isMorning}
                     songIndex={songIndex}
                 />
-                {/* <MusicPlayer /> */}
             </Box>
         </>
     );

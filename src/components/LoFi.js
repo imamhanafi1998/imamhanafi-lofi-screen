@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import '../assets/css/LoFi.css'
 
 const LoFi = ({
@@ -15,21 +15,32 @@ const LoFi = ({
     audioSleep3Ref, 
 
     audioRainRef, 
+    audioBirdRef, 
+    audioTrafficRef, 
+    audioFanRef, 
+    audioFirePlaceRef, 
+    audioPeopleRef, 
+    audioRiverRef, 
+    audioWindRef, 
+
     isSunny,
+    isMorning
     // songIndex
 }) => {
-    // const newIndex = songIndex + 1
-    // useEffect(() => {
-    //     console.log(newIndex);
-    // })
     return (
         <>
             {/* bg */}
-            <video loop muted autoPlay className={isSunny ? 'videoIn' : 'videoOut'}>
+            <video loop muted autoPlay className={isSunny && isMorning ? 'videoIn' : 'videoOut'}>
                 <source src="./assets/video/Day-sunny.mp4" type="video/mp4" />
             </video>
-            <video loop muted autoPlay className={!isSunny ? 'videoIn' : 'videoOut'}>
+            <video loop muted autoPlay className={!isSunny && isMorning ? 'videoIn' : 'videoOut'}>
                 <source src="./assets/video/Day-rainny.mp4" type="video/mp4" />
+            </video>
+            <video loop muted autoPlay className={isSunny && !isMorning ?  'videoIn' : 'videoOut'}>
+                <source src="./assets/video/Night-clear.mp4" type="video/mp4" />
+            </video>
+            <video loop muted autoPlay className={!isSunny && !isMorning ? 'videoIn' : 'videoOut'}>
+                <source src="./assets/video/Night-rainny.mp4" type="video/mp4" />
             </video>
 
             {/* lofi chill */}
@@ -66,6 +77,33 @@ const LoFi = ({
             </audio>
 
             {/* song */}
+            <audio loop controls autoPlay ref={audioRainRef} style={{display: 'none'}}>
+                <source src="./assets/musics/rain_city.mp3" type="audio/mpeg" />
+            </audio>
+            <audio loop controls autoPlay ref={audioBirdRef} style={{display: 'none'}}>
+                <source src="./assets/musics/birds.mp3" type="audio/mpeg" />
+            </audio>
+            <audio loop controls autoPlay ref={audioTrafficRef} style={{display: 'none'}}>
+                <source src="./assets/musics/city_traffic.mp3" type="audio/mpeg" />
+            </audio>
+            <audio loop controls autoPlay ref={audioFanRef} style={{display: 'none'}}>
+                <source src="./assets/musics/fan.mp3" type="audio/mpeg" />
+            </audio>
+            <audio loop controls autoPlay ref={audioFirePlaceRef} style={{display: 'none'}}>
+                <source src="./assets/musics/fireplace.mp3" type="audio/mpeg" />
+            </audio>
+            <audio loop controls autoPlay ref={audioPeopleRef} style={{display: 'none'}}>
+                <source src="./assets/musics/people_talk_inside.mp3" type="audio/mpeg" />
+            </audio>
+            <audio loop controls autoPlay ref={audioRiverRef} style={{display: 'none'}}>
+                <source src="./assets/musics/river.mp3" type="audio/mpeg" />
+            </audio>
+            <audio loop controls autoPlay ref={audioWindRef} style={{display: 'none'}}>
+                <source src="./assets/musics/wind.mp3" type="audio/mpeg" />
+            </audio>
+            <audio loop controls autoPlay ref={audioRainRef} style={{display: 'none'}}>
+                <source src="./assets/musics/rain_city.mp3" type="audio/mpeg" />
+            </audio>
             <audio loop controls autoPlay ref={audioRainRef} style={{display: 'none'}}>
                 <source src="./assets/musics/rain_city.mp3" type="audio/mpeg" />
             </audio>
