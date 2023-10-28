@@ -2,6 +2,7 @@ import React from "react";
 
 import { 
     Box, Button, Grid, Flex, Spacer , 
+    IconButton, 
     Menu,
     MenuButton,
     MenuList,
@@ -19,6 +20,13 @@ import {
     FormLabel,
 } from "@chakra-ui/react";
 import { ChevronDownIcon } from "@chakra-ui/icons";
+import { 
+    BsFullscreen, BsFullscreenExit, 
+    BsFillSunFill, BsMoonFill, 
+    BsFillCloudFill, BsFillCloudRainFill, 
+    BsFillVolumeUpFill, BsShuffle, 
+    BsPlayFill, BsPauseFill 
+} from 'react-icons/bs'
 
 import '../assets/css/Header.css'
 
@@ -126,20 +134,31 @@ const Header = ({
                         <MenuItem onClick={() => setLoFiTheme('Sleep')}>Sleep</MenuItem>
                     </MenuList>
                 </Menu>
-                {/* <Button onClick={toggleColorMode}>
-                    Toggle {colorMode === 'light' ? 'Dark' : 'Light'}
-                </Button> */}
-                <Button variant={'solid'} colorScheme={'blackAlpha'} onClick={playAudio} color={'white'}>{isSongPlaying ? 'Pause' : 'Play'}</Button>
-                <Button variant={'solid'} colorScheme={'blackAlpha'} onClick={changeSongHandler} color={'white'}>Change Song</Button>
-                {/* <Button variant={'solid'} colorScheme={'blackAlpha'} onClick={changeSongVolumeHandler} color={'white'}>Mute</Button> */}
+                <IconButton
+                    variant={'solid'}
+                    colorScheme={'blackAlpha'}
+                    color={'white'}
+                    icon={isSongPlaying ? <BsPauseFill /> : <BsPlayFill />}
+                    onClick={playAudio}
+                />
+                <IconButton
+                    variant={'solid'}
+                    colorScheme={'blackAlpha'}
+                    color={'white'}
+                    icon={<BsShuffle />}
+                    onClick={changeSongHandler}
+                />
                 <Popover>
                     <PopoverTrigger>
-                        <Button variant={'solid'} colorScheme={'blackAlpha'} color={'white'}>Volume</Button>
+                        <IconButton
+                            variant={'solid'}
+                            colorScheme={'blackAlpha'}
+                            color={'white'}
+                            icon={<BsFillVolumeUpFill />}
+                        />
                     </PopoverTrigger>
                     <PopoverContent>
                         <PopoverArrow />
-                        {/* <PopoverCloseButton /> */}
-                        {/* <PopoverHeader>Set LoFi Volume</PopoverHeader> */}
                         <PopoverBody>
                             <Box>
                                 <FormControl>
@@ -236,9 +255,27 @@ const Header = ({
                         </PopoverBody>
                     </PopoverContent>
                 </Popover>
-                <Button variant={'solid'} colorScheme={'blackAlpha'} onClick={sunnyHandler} color={'white'}>{isSunny ? 'Make Rain' : 'Make Sunny'}</Button>
-                <Button variant={'solid'} colorScheme={'blackAlpha'} onClick={morningHandler} color={'white'}>{isMorning ? 'Make Night' : 'Make Morning'}</Button>
-                <Button variant={'solid'} colorScheme={'blackAlpha'} onClick={fullScreenHandler} color={'white'}>{isFullScreen && 'Exit '}Full Screen</Button>
+                <IconButton
+                    variant={'solid'}
+                    colorScheme={'blackAlpha'}
+                    color={'white'}
+                    icon={isSunny ? <BsFillCloudRainFill /> : <BsFillCloudFill />}
+                    onClick={sunnyHandler}
+                />
+                <IconButton
+                    variant={'solid'}
+                    colorScheme={'blackAlpha'}
+                    color={'white'}
+                    icon={isMorning ? <BsMoonFill /> : <BsFillSunFill />}
+                    onClick={morningHandler}
+                />
+                <IconButton
+                    variant={'solid'}
+                    colorScheme={'blackAlpha'}
+                    color={'white'}
+                    icon={isFullScreen ? <BsFullscreenExit /> : <BsFullscreen />}
+                    onClick={fullScreenHandler}
+                />
             </Grid>
         </Flex>
         
