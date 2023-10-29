@@ -2,6 +2,7 @@ import React from "react";
 
 import { 
     Box, Button, Grid, Flex, Spacer , 
+    Icon, 
     IconButton, 
     Menu,
     MenuButton,
@@ -25,7 +26,7 @@ import {
     BsFillSunFill, BsMoonFill, 
     BsFillCloudFill, BsFillCloudRainFill, 
     BsFillVolumeUpFill, BsShuffle, 
-    BsPlayFill, BsPauseFill 
+    BsPlayFill, BsPauseFill , BsMusicNote
 } from 'react-icons/bs'
 
 import '../assets/css/Header.css'
@@ -123,10 +124,14 @@ const Header = ({
     return (
         <Flex position={'absolute'} w={'100%'} zIndex={2} p={4}>
             <Spacer />
-            <Grid gap={4} autoFlow="column dense">
-                <Menu>
-                    <MenuButton as={Button} rightIcon={<ChevronDownIcon />} variant={'solid'} colorScheme={'blackAlpha'}>
-                        {loFiTheme}
+            <Grid gap={4} autoFlow="row dense">
+                <Menu autoSelect={false}>
+                    <MenuButton as={Button} 
+                        // rightIcon={<ChevronDownIcon />} 
+                        variant={'solid'} colorScheme={'blackAlpha'}
+                    >
+                        {/* {loFiTheme} */}
+                        <Icon as={BsMusicNote} />
                     </MenuButton>
                     <MenuList>
                         <MenuItem onClick={() => setLoFiTheme('Chill')}>Chill</MenuItem>

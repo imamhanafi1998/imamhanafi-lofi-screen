@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './assets/css/App.css';
 
-import { Box } from '@chakra-ui/react'
+import { Box, AbsoluteCenter, Text } from '@chakra-ui/react'
 import LoFi from './components/LoFi';
 import Header from './components/Header';
 
@@ -234,77 +234,75 @@ function App() {
     }
 
     return (
-        <>
-            <Box>
-                <Header
-                    isFullScreen = {isFullScreen} 
-                    setIsFullScreen = {setIsFullScreen}
-                    isSunny = {isSunny}
-                    setIsSunny = {setIsSunny}
-                    isMorning = {isMorning}
-                    setIsMorning = {setIsMorning}
-                    isSongPlaying = {isSongPlaying}
-                    playAudio = {playAudio}
-                    audioRainRef = {audioRainRef}
-                    loFiTheme = {loFiTheme} 
-                    setLoFiTheme = {setLoFiTheme}
-                    changeSongHandler={changeSongHandler}
-                    songVolume = {songVolume}
-                    setSongVolume = {setSongVolume}
-                    
-                    rainVolume = {rainVolume}
-                    setRainVolume = {setRainVolume}
-                    birdVolume = {birdVolume}
-                    setBirdVolume = {setBirdVolume}
-                    trafficVolume = {trafficVolume}
-                    setTrafficVolume = {setTrafficVolume}
-                    fanVolume = {fanVolume}
-                    setFanVolume = {setFanVolume}
-                    firePlaceVolume = {firePlaceVolume}
-                    setFirePlaceVolume = {setFirePlaceVolume}
-                    peopleVolume = {peopleVolume}
-                    setPeopleVolume = {setPeopleVolume}
-                    riverVolume = {riverVolume}
-                    setRiverVolume = {setRiverVolume}
-                    windVolume = {windVolume}
-                    setWindVolume = {setWindVolume}
+        <Box>
+            <Header
+                isFullScreen = {isFullScreen} 
+                setIsFullScreen = {setIsFullScreen}
+                isSunny = {isSunny}
+                setIsSunny = {setIsSunny}
+                isMorning = {isMorning}
+                setIsMorning = {setIsMorning}
+                isSongPlaying = {isSongPlaying}
+                playAudio = {playAudio}
+                audioRainRef = {audioRainRef}
+                loFiTheme = {loFiTheme} 
+                setLoFiTheme = {setLoFiTheme}
+                changeSongHandler={changeSongHandler}
+                songVolume = {songVolume}
+                setSongVolume = {setSongVolume}
+                
+                rainVolume = {rainVolume}
+                setRainVolume = {setRainVolume}
+                birdVolume = {birdVolume}
+                setBirdVolume = {setBirdVolume}
+                trafficVolume = {trafficVolume}
+                setTrafficVolume = {setTrafficVolume}
+                fanVolume = {fanVolume}
+                setFanVolume = {setFanVolume}
+                firePlaceVolume = {firePlaceVolume}
+                setFirePlaceVolume = {setFirePlaceVolume}
+                peopleVolume = {peopleVolume}
+                setPeopleVolume = {setPeopleVolume}
+                riverVolume = {riverVolume}
+                setRiverVolume = {setRiverVolume}
+                windVolume = {windVolume}
+                setWindVolume = {setWindVolume}
 
-                    // changeBirdVolumeHandler = {changeBirdVolumeHandler}
-                    // changeTrafficVolumeHandler = {changeTrafficVolumeHandler}
-                    // changeFanVolumeHandler = {changeFanVolumeHandler}
-                    // changeFirePlaceVolumeHandler = {changeFirePlaceVolumeHandler}
-                    // changePeopleVolumeHandler = {changePeopleVolumeHandler}
-                    // changeRiverVolumeHandler = {changeRiverVolumeHandler}
-                    // changeWindVolumeHandler = {changeWindVolumeHandler}
-                />
-                <LoFi 
-                    audioChill1Ref = {audioChill1Ref}
-                    audioChill2Ref = {audioChill2Ref}
-                    audioChill3Ref = {audioChill3Ref}
+                // changeBirdVolumeHandler = {changeBirdVolumeHandler}
+                // changeTrafficVolumeHandler = {changeTrafficVolumeHandler}
+                // changeFanVolumeHandler = {changeFanVolumeHandler}
+                // changeFirePlaceVolumeHandler = {changeFirePlaceVolumeHandler}
+                // changePeopleVolumeHandler = {changePeopleVolumeHandler}
+                // changeRiverVolumeHandler = {changeRiverVolumeHandler}
+                // changeWindVolumeHandler = {changeWindVolumeHandler}
+            />
+            <LoFi 
+                audioChill1Ref = {audioChill1Ref}
+                audioChill2Ref = {audioChill2Ref}
+                audioChill3Ref = {audioChill3Ref}
 
-                    audioJazz1Ref={audioJazz1Ref}
-                    audioJazz2Ref={audioJazz2Ref}
-                    audioJazz3Ref={audioJazz3Ref}
+                audioJazz1Ref={audioJazz1Ref}
+                audioJazz2Ref={audioJazz2Ref}
+                audioJazz3Ref={audioJazz3Ref}
 
-                    audioSleep1Ref={audioSleep1Ref}
-                    audioSleep2Ref={audioSleep2Ref}
-                    audioSleep3Ref={audioSleep3Ref}
+                audioSleep1Ref={audioSleep1Ref}
+                audioSleep2Ref={audioSleep2Ref}
+                audioSleep3Ref={audioSleep3Ref}
 
-                    audioRainRef = {audioRainRef}
-                    audioBirdRef = {audioBirdRef}
-                    audioTrafficRef = {audioTrafficRef}
-                    audioFanRef = {audioFanRef}
-                    audioFirePlaceRef = {audioFirePlaceRef}
-                    audioPeopleRef = {audioPeopleRef}
-                    audioRiverRef = {audioRiverRef}
-                    audioWindRef = {audioWindRef}
+                audioRainRef = {audioRainRef}
+                audioBirdRef = {audioBirdRef}
+                audioTrafficRef = {audioTrafficRef}
+                audioFanRef = {audioFanRef}
+                audioFirePlaceRef = {audioFirePlaceRef}
+                audioPeopleRef = {audioPeopleRef}
+                audioRiverRef = {audioRiverRef}
+                audioWindRef = {audioWindRef}
 
-                    isSunny = {isSunny}
-                    isMorning = {isMorning}
-                    songIndex={songIndex}
-                />
-            </Box>
-        </>
+                isSunny = {isSunny}
+                isMorning = {isMorning}
+                songIndex={songIndex}
+            />
+        </Box>
     );
 }
 
