@@ -124,7 +124,7 @@ const Header = ({
     return (
         <Flex position={'absolute'} w={'100%'} zIndex={2} p={4}>
             <Spacer />
-            <Grid gap={4} autoFlow="row dense">
+            {/* <Grid gap={4} autoFlow="row dense"> */}
                 <Menu autoSelect={false}>
                     <MenuButton as={Button} 
                         // rightIcon={<ChevronDownIcon />} 
@@ -140,6 +140,7 @@ const Header = ({
                     </MenuList>
                 </Menu>
                 <IconButton
+                    mx={1}
                     variant={'solid'}
                     colorScheme={'blackAlpha'}
                     color={'white'}
@@ -156,6 +157,7 @@ const Header = ({
                 <Popover>
                     <PopoverTrigger>
                         <IconButton
+                            mx={1}
                             variant={'solid'}
                             colorScheme={'blackAlpha'}
                             color={'white'}
@@ -268,6 +270,7 @@ const Header = ({
                     onClick={sunnyHandler}
                 />
                 <IconButton
+                    mx={1}
                     variant={'solid'}
                     colorScheme={'blackAlpha'}
                     color={'white'}
@@ -281,7 +284,7 @@ const Header = ({
                     icon={isFullScreen ? <BsFullscreenExit /> : <BsFullscreen />}
                     onClick={fullScreenHandler}
                 />
-            </Grid>
+            {/* </Grid> */}
         </Flex>
         
     )
