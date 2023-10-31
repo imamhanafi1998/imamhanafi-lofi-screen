@@ -65,6 +65,7 @@ const Header = ({
     windVolume, 
     setWindVolume, 
 }) => {
+    const step_ = 5
     const fullScreenHandler = () => {
         (!isFullScreen) ? document.documentElement.requestFullscreen() : document.exitFullscreen()
         setIsFullScreen(!isFullScreen);
@@ -170,7 +171,7 @@ const Header = ({
                             <Box>
                                 <FormControl>
                                     <FormLabel>LoFi Volume</FormLabel>
-                                    <Slider value={songVolume} onChange={e => setLoFiSliderVal(e)}>
+                                    <Slider value={songVolume} onChange={e => setLoFiSliderVal(e)} step={step_}>
                                         <SliderTrack>
                                             <SliderFilledTrack />
                                         </SliderTrack>
@@ -180,7 +181,7 @@ const Header = ({
                                 <hr />
                                 <FormControl>
                                     <FormLabel>Rain Volume</FormLabel>
-                                    <Slider value={rainVolume} onChange={e => setRainSliderVal(e)}>
+                                    <Slider value={rainVolume} onChange={e => setRainSliderVal(e)} step={step_}>
                                         <SliderTrack>
                                             <SliderFilledTrack />
                                         </SliderTrack>
@@ -190,7 +191,7 @@ const Header = ({
                                 <hr />
                                 <FormControl>
                                     <FormLabel>Birds Volume</FormLabel>
-                                    <Slider value={birdVolume} onChange={e => setBirdSliderVal(e)}>
+                                    <Slider value={birdVolume} onChange={e => setBirdSliderVal(e)} step={step_}>
                                         <SliderTrack>
                                             <SliderFilledTrack />
                                         </SliderTrack>
@@ -200,7 +201,7 @@ const Header = ({
                                 <hr />
                                 <FormControl>
                                     <FormLabel>Traffic Volume</FormLabel>
-                                    <Slider value={trafficVolume} onChange={e => setTrafficSliderVal(e)}>
+                                    <Slider value={trafficVolume} onChange={e => setTrafficSliderVal(e)} step={step_}>
                                         <SliderTrack>
                                             <SliderFilledTrack />
                                         </SliderTrack>
@@ -210,7 +211,7 @@ const Header = ({
                                 <hr />
                                 <FormControl>
                                     <FormLabel>Fan Volume</FormLabel>
-                                    <Slider value={fanVolume} onChange={e => setFanSliderVal(e)}>
+                                    <Slider value={fanVolume} onChange={e => setFanSliderVal(e)} step={step_}>
                                         <SliderTrack>
                                             <SliderFilledTrack />
                                         </SliderTrack>
@@ -220,7 +221,7 @@ const Header = ({
                                 <hr />
                                 <FormControl>
                                     <FormLabel>Fire Place Volume</FormLabel>
-                                    <Slider value={firePlaceVolume} onChange={e => setFirePlaceSliderVal(e)}>
+                                    <Slider value={firePlaceVolume} onChange={e => setFirePlaceSliderVal(e)} step={step_}>
                                         <SliderTrack>
                                             <SliderFilledTrack />
                                         </SliderTrack>
@@ -230,7 +231,7 @@ const Header = ({
                                 <hr />
                                 <FormControl>
                                     <FormLabel>People Volume</FormLabel>
-                                    <Slider value={peopleVolume} onChange={e => setPeopleSliderVal(e)}>
+                                    <Slider value={peopleVolume} onChange={e => setPeopleSliderVal(e)} step={step_}>
                                         <SliderTrack>
                                             <SliderFilledTrack />
                                         </SliderTrack>
@@ -240,7 +241,7 @@ const Header = ({
                                 <hr />
                                 <FormControl>
                                     <FormLabel>River Volume</FormLabel>
-                                    <Slider value={riverVolume} onChange={e => setRiverSliderVal(e)}>
+                                    <Slider value={riverVolume} onChange={e => setRiverSliderVal(e)} step={step_}>
                                         <SliderTrack>
                                             <SliderFilledTrack />
                                         </SliderTrack>
@@ -250,7 +251,7 @@ const Header = ({
                                 <hr />
                                 <FormControl>
                                     <FormLabel>Wind Volume</FormLabel>
-                                    <Slider value={windVolume} onChange={e => setWindSliderVal(e)}>
+                                    <Slider value={windVolume} onChange={e => setWindSliderVal(e)} step={step_}>
                                         <SliderTrack>
                                             <SliderFilledTrack />
                                         </SliderTrack>
