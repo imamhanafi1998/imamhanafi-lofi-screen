@@ -127,7 +127,7 @@ const Header = ({
             <Spacer />
             {/* <Grid gap={4} autoFlow="row dense"> */}
                 <Menu autoSelect={false}>
-                    <MenuButton as={Button} 
+                    <MenuButton as={IconButton} 
                         // rightIcon={<ChevronDownIcon />} 
                         variant={'solid'} colorScheme={'blackAlpha'}
                     >
